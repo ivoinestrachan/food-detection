@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 model = YOLO('yolov8n.pt')
 
-source = './ingredients'
+source = './dataset/ingredients'
 
 for filename in os.listdir(source):
     if filename.lower().endswith(('.png', '.jpg', '.jpeg', 'webp')):
@@ -13,4 +13,3 @@ for filename in os.listdir(source):
         image = cv2.imread(img_path)
         if image is not None:
             results = model(image)
-
